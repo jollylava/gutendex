@@ -96,16 +96,13 @@ WSGI_APPLICATION = 'gutendex.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+# Database
+# https://docs.djangoproject.com/en/1.10/ref/settings/#databases
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('DATABASE_NAME'),
-        'USER': env('DATABASE_USER'),
-        'PASSWORD': env('DATABASE_PASSWORD'),
-        'HOST': env('DATABASE_HOST'),
-        'PORT': env('DATABASE_PORT'),
-    }
+    'default': env.db('DATABASE_URL', default='postgres:///gutendex_db_cj29')
 }
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
